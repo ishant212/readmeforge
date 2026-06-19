@@ -28,7 +28,7 @@ export const TopBar: React.FC = () => {
       <div className="flex items-center space-x-3 relative z-10">
         <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-700 flex items-center justify-center shadow-sm overflow-hidden">
   <img
-    src='src\assets\logo.svg'
+    src='src\assets\logo.png'
     alt="Logo"
     className="w-full h-full object-contain"
   />
