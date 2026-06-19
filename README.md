@@ -1,6 +1,6 @@
 # 🔨 ReadMeForge
 
-> A README builder that actually writes its own README. Irony acknowledged.
+> A README builder that can actually write its own README. Irony acknowledged.
 
 ![React](https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)
