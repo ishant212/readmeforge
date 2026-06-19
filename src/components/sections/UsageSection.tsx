@@ -17,9 +17,9 @@ export const UsageSection: React.FC<Props> = ({ section, onChange }) => {
           Usage Description
         </label>
         <textarea
-          className="w-full h-24 bg-zinc-950 border border-zinc-800 rounded-lg p-3 text-sm text-zinc-200
-                     placeholder-zinc-650 resize-none focus:outline-none focus:border-blue-600
-                     focus:ring-1 focus:ring-blue-600/40 transition-colors"
+          className="w-full h-24 bg-surface-page border border-warm-border rounded-lg p-3 text-sm text-zinc-200
+                     placeholder-zinc-650 resize-none focus:outline-none focus:border-accent
+                     focus:ring-1 focus:ring-accent/40 transition-colors"
           placeholder="Explain how to use your project after installation..."
           value={description}
           onChange={(e) => onChange({ ...section.content, description: e.target.value })}
@@ -31,9 +31,9 @@ export const UsageSection: React.FC<Props> = ({ section, onChange }) => {
           Example Code
         </label>
         <textarea
-          className="w-full h-40 bg-zinc-950 border border-zinc-800 rounded-lg p-3 text-sm text-zinc-200
-                     placeholder-zinc-650 resize-none focus:outline-none focus:border-blue-600
-                     focus:ring-1 focus:ring-blue-600/40 transition-colors font-mono"
+          className="w-full h-40 bg-surface-page border border-warm-border rounded-lg p-3 text-sm text-zinc-200
+                     placeholder-zinc-650 resize-none focus:outline-none focus:border-accent
+                     focus:ring-1 focus:ring-accent/40 transition-colors font-mono"
           placeholder={`import myCoolLib from 'my-cool-project';\n\nmyCoolLib.doAwesomeThing();`}
           value={exampleCode}
           onChange={(e) => onChange({ ...section.content, exampleCode: e.target.value })}

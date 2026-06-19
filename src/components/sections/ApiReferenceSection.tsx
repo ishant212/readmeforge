@@ -39,11 +39,11 @@ export const ApiReferenceSection: React.FC<Props> = ({ section, onChange }) => {
 
       <div className="space-y-3">
         {rows.map((row, index) => (
-          <div key={index} className="flex flex-col sm:flex-row gap-2 items-start bg-zinc-900/40 p-3 rounded-lg border border-zinc-900">
+          <div key={index} className="flex flex-col sm:flex-row gap-2 items-start bg-surface-card/40 p-3 rounded-lg border border-warm-border">
             <div className="flex-1 flex gap-2 w-full">
               <select
-                className="bg-zinc-950 border border-zinc-800 rounded-lg px-2.5 py-2 text-xs font-mono text-zinc-200
-                           focus:outline-none focus:border-blue-600 transition-colors w-24 shrink-0 cursor-pointer"
+                className="bg-surface-page border border-warm-border rounded-lg px-2.5 py-2 text-xs font-mono text-zinc-200
+                           focus:outline-none focus:border-accent transition-colors w-24 shrink-0 cursor-pointer"
                 value={row.method}
                 onChange={(e) => updateRow(index, 'method', e.target.value)}
               >
@@ -55,8 +55,8 @@ export const ApiReferenceSection: React.FC<Props> = ({ section, onChange }) => {
               </select>
               <input
                 type="text"
-                className="flex-1 bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-sm
-                           text-zinc-200 placeholder-zinc-650 focus:outline-none focus:border-blue-600
+                className="flex-1 bg-surface-page border border-warm-border rounded-lg px-3 py-2 text-sm
+                           text-zinc-200 placeholder-zinc-650 focus:outline-none focus:border-accent
                            transition-colors font-mono"
                 placeholder="/api/v1/resource"
                 value={row.endpoint}
@@ -66,8 +66,8 @@ export const ApiReferenceSection: React.FC<Props> = ({ section, onChange }) => {
             <div className="flex-1 flex gap-2 w-full">
               <input
                 type="text"
-                className="flex-1 bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-sm
-                           text-zinc-200 placeholder-zinc-650 focus:outline-none focus:border-blue-600
+                className="flex-1 bg-surface-page border border-warm-border rounded-lg px-3 py-2 text-sm
+                           text-zinc-200 placeholder-zinc-650 focus:outline-none focus:border-accent
                            transition-colors"
                 placeholder="Description of the endpoint"
                 value={row.description}
@@ -92,7 +92,7 @@ export const ApiReferenceSection: React.FC<Props> = ({ section, onChange }) => {
       <button
         type="button"
         onClick={addRow}
-        className="flex items-center gap-1.5 text-xs text-blue-400 hover:text-blue-300
+        className="flex items-center gap-1.5 text-xs text-accent-light hover:text-accent-hover
                    transition-colors font-medium mt-1 cursor-pointer"
       >
         <span className="text-base leading-none">+</span> Add endpoint row

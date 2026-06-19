@@ -23,8 +23,8 @@ function CopyButton({ text }: { text: string }) {
       type="button"
       onClick={handleCopy}
       className="shrink-0 flex items-center gap-1 px-2.5 py-1.5 text-xs font-medium rounded
-                 border border-zinc-700 text-zinc-300 hover:border-zinc-500 hover:text-zinc-100
-                 transition-colors focus:outline-none focus:ring-1 focus:ring-blue-600"
+                 border border-warm-border text-zinc-300 hover:border-warm-border-light hover:text-zinc-100
+                 transition-colors focus:outline-none focus:ring-1 focus:ring-accent"
     >
       {copied ? (
         <>
@@ -60,10 +60,10 @@ interface StepBoxProps {
 function StepBox({ step, label, command, helper, textareaId, placeholder, value, onChange }: StepBoxProps) {
   return (
     <div className="space-y-2">
-      <div className="p-3 bg-zinc-900 border border-zinc-800 rounded-lg space-y-2">
+      <div className="p-3 bg-surface-card border border-warm-border rounded-lg space-y-2">
         <p className="text-[11px] font-bold text-zinc-500 uppercase tracking-wider">{step} — {label}</p>
         <div className="flex items-center gap-2">
-          <code className="flex-1 text-xs font-mono text-zinc-200 bg-zinc-950 border border-zinc-800 rounded px-2.5 py-1.5 overflow-x-auto whitespace-nowrap">
+          <code className="flex-1 text-xs font-mono text-zinc-200 bg-surface-page border border-warm-border rounded px-2.5 py-1.5 overflow-x-auto whitespace-nowrap">
             {command}
           </code>
           <CopyButton text={command} />
@@ -75,9 +75,9 @@ function StepBox({ step, label, command, helper, textareaId, placeholder, value,
       </label>
       <textarea
         id={textareaId}
-        className="w-full h-36 bg-zinc-950 border border-zinc-800 rounded-lg p-3 text-sm
-                   text-zinc-200 placeholder-zinc-700 resize-none focus:outline-none
-                   focus:border-blue-600 focus:ring-1 focus:ring-blue-600/40
+        className="w-full h-36 bg-surface-page border border-warm-border rounded-lg p-3 text-sm
+                   text-zinc-200 placeholder-zinc-650 resize-none focus:outline-none
+                   focus:border-accent focus:ring-1 focus:ring-accent/40
                    transition-colors font-mono"
         placeholder={placeholder}
         value={value}
@@ -127,9 +127,9 @@ export const FolderStructureSection: React.FC<Props> = ({ section, onChange }) =
         <input
           id="folder-root-name"
           type="text"
-          className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-sm
-                     text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-blue-600
-                     focus:ring-1 focus:ring-blue-600/40 transition-colors font-mono"
+          className="w-full bg-surface-page border border-warm-border rounded-lg px-3 py-2 text-sm
+                     text-zinc-200 placeholder-zinc-650 focus:outline-none focus:border-accent
+                     focus:ring-1 focus:ring-accent/40 transition-colors font-mono"
           placeholder="my-project"
           value={rootName}
           onChange={(e) => setRootName(e.target.value)}
@@ -165,18 +165,18 @@ export const FolderStructureSection: React.FC<Props> = ({ section, onChange }) =
         <button
           type="button"
           onClick={handleParse}
-          className="px-3 py-1.5 text-xs font-semibold rounded bg-blue-600 hover:bg-blue-500
+          className="px-3 py-1.5 text-xs font-semibold rounded bg-accent hover:bg-accent-hover
                      text-white transition-colors focus:outline-none focus:ring-2
-                     focus:ring-blue-500 focus:ring-offset-1 focus:ring-offset-zinc-950"
+                     focus:ring-accent focus:ring-offset-1 focus:ring-offset-surface-page"
         >
           Parse Structure
         </button>
         <button
           type="button"
           onClick={handleClear}
-          className="px-3 py-1.5 text-xs font-medium rounded border border-zinc-800
-                     text-zinc-400 hover:border-zinc-600 hover:text-zinc-200
-                     transition-colors focus:outline-none focus:ring-1 focus:ring-zinc-600"
+          className="px-3 py-1.5 text-xs font-medium rounded border border-warm-border
+                     text-zinc-400 hover:border-warm-border-light hover:text-zinc-200
+                     transition-colors focus:outline-none focus:ring-1 focus:ring-warm-border-light"
         >
           Clear
         </button>
@@ -200,13 +200,13 @@ export const FolderStructureSection: React.FC<Props> = ({ section, onChange }) =
           </label>
           <textarea
             id="folder-parsed-tree"
-            className="w-full h-52 bg-zinc-950 border border-zinc-800 rounded-lg p-3 text-sm
-                       text-zinc-200 resize-none focus:outline-none focus:border-blue-600
-                       focus:ring-1 focus:ring-blue-600/40 transition-colors font-mono whitespace-pre"
+            className="w-full h-52 bg-surface-page border border-warm-border rounded-lg p-3 text-sm
+                       text-zinc-200 resize-none focus:outline-none focus:border-accent
+                       focus:ring-1 focus:ring-accent/40 transition-colors font-mono whitespace-pre"
             value={parsedTree}
             onChange={(e) => onChange({ ...section.content, parsedTree: e.target.value })}
           />
-          <p className="text-xs text-zinc-600">Edit directly — preview updates immediately.</p>
+          <p className="text-xs text-zinc-650">Edit directly — preview updates immediately.</p>
         </div>
       )}
     </div>

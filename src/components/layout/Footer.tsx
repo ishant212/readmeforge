@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-zinc-950 border-t border-zinc-850 px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-zinc-400 select-none">
+    <footer className="bg-surface-panel border-t border-warm-border px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-zinc-400 select-none">
       <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
         <div>
           <span className="font-semibold text-zinc-300">Name:</span> Ishant Shekhar Eeshu

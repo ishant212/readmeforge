@@ -17,8 +17,8 @@ export const InstallationSection: React.FC<Props> = ({ section, onChange }) => {
           Language / Package Manager
         </label>
         <select
-          className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-sm text-zinc-200
-                     focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600/40
+          className="w-full bg-surface-page border border-warm-border rounded-lg p-2.5 text-sm text-zinc-200
+                     focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/40
                      transition-colors cursor-pointer"
           value={lang}
           onChange={(e) => onChange({ ...section.content, lang: e.target.value })}
@@ -35,9 +35,9 @@ export const InstallationSection: React.FC<Props> = ({ section, onChange }) => {
           Installation Command / Script
         </label>
         <textarea
-          className="w-full h-32 bg-zinc-950 border border-zinc-800 rounded-lg p-3 text-sm text-zinc-200
-                     placeholder-zinc-650 resize-none focus:outline-none focus:border-blue-600
-                     focus:ring-1 focus:ring-blue-600/40 transition-colors font-mono"
+          className="w-full h-32 bg-surface-page border border-warm-border rounded-lg p-3 text-sm text-zinc-200
+                     placeholder-zinc-650 resize-none focus:outline-none focus:border-accent
+                     focus:ring-1 focus:ring-accent/40 transition-colors font-mono"
           placeholder="npm install my-cool-project"
           value={code}
           onChange={(e) => onChange({ ...section.content, code: e.target.value })}

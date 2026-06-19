@@ -96,21 +96,21 @@ function ScoreCard({ sections }: { sections: Section[] }) {
   const { score, suggestions } = scoreReadme(sections);
 
   const barColor =
-    score >= 80 ? 'bg-emerald-500' :
-    score >= 50 ? 'bg-amber-500'   :
+    score >= 80 ? 'bg-accent' :
+    score >= 50 ? 'bg-amber-500' :
                   'bg-red-500';
 
   return (
-    <div className="px-4 py-3 bg-zinc-900/40 border-b border-zinc-800 space-y-2">
+    <div className="px-4 py-3 bg-surface-page/40 border-b border-warm-border space-y-2">
       <div className="flex items-center justify-between">
-        <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest">
+        <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest font-display">
           README Score
         </span>
-        <span className={`text-sm font-bold ${score >= 80 ? 'text-emerald-400' : score >= 50 ? 'text-amber-400' : 'text-red-400'}`}>
+        <span className={`text-sm font-bold ${score >= 80 ? 'text-accent-light' : score >= 50 ? 'text-amber-400' : 'text-red-400'}`}>
           {score}/100
         </span>
       </div>
-      <div className="w-full h-1.5 bg-zinc-800 rounded-full overflow-hidden">
+      <div className="w-full h-1.5 bg-surface-card rounded-full overflow-hidden">
         <motion.div
           className={`h-full rounded-full ${barColor}`}
           initial={false}
@@ -122,7 +122,7 @@ function ScoreCard({ sections }: { sections: Section[] }) {
         <div className="space-y-0.5 pt-1">
           {suggestions.map((s) => (
             <p key={s.label} className="text-[11px] text-zinc-500">
-              <span className="text-blue-400 font-medium">+{s.points}</span>{' '}
+              <span className="text-accent-light font-medium">+{s.points}</span>{' '}
               {s.label}
             </p>
           ))}
@@ -195,12 +195,12 @@ function SortableCard({
         className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium
                     border transition-all duration-150 cursor-pointer
                     ${isSelected
-                      ? 'bg-blue-600/20 border-blue-500 text-blue-300'
-                      : 'bg-zinc-900 border-zinc-700 text-zinc-400 hover:border-zinc-500 hover:text-zinc-300'
+                      ? 'bg-accent/20 border-accent text-accent-light'
+                      : 'bg-surface-card border-warm-border text-zinc-400 hover:border-warm-border-light hover:text-zinc-300'
                     }`}
       >
         <span
-          className={`w-1.5 h-1.5 rounded-full ${section.enabled ? 'bg-emerald-400' : 'bg-zinc-600'}`}
+          className={`w-1.5 h-1.5 rounded-full ${section.enabled ? 'bg-accent' : 'bg-warm-border-light'}`}
         />
         {SECTION_LABELS[section.type] ?? section.type}
       </button>
@@ -236,15 +236,15 @@ export const BuilderPanel: React.FC<Props> = ({
   };
 
   return (
-    <div className="w-full md:w-1/2 h-full flex flex-col border-r border-zinc-800 overflow-hidden">
+    <div className="w-full md:w-1/2 h-full flex flex-col border-r border-warm-border overflow-hidden">
       {/* ── Score Card ──────────────────────────────────────────── */}
       <ScoreCard sections={sections} />
 
       {/* ── Section pill list ──────────────────────────────────── */}
-      <div className="shrink-0 border-b border-zinc-800">
-        <div className="px-4 py-3 flex items-center justify-between bg-zinc-900/60">
-          <h2 className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Sections</h2>
-          <span className="text-[10px] text-zinc-600 select-none">drag to reorder</span>
+      <div className="shrink-0 border-b border-warm-border">
+        <div className="px-4 py-3 flex items-center justify-between bg-surface-panel/60">
+          <h2 className="text-xs font-bold text-zinc-400 uppercase tracking-widest font-display">Sections</h2>
+          <span className="text-[10px] text-zinc-650 select-none">drag to reorder</span>
         </div>
 
         <DndContext
@@ -256,7 +256,7 @@ export const BuilderPanel: React.FC<Props> = ({
             items={sections.map((s) => s.id)}
             strategy={horizontalListSortingStrategy}
           >
-            <div className="flex gap-1.5 overflow-x-auto px-4 py-3 bg-zinc-900/30">
+            <div className="flex gap-1.5 overflow-x-auto px-4 py-3 bg-surface-panel/30">
               <AnimatePresence mode="popLayout">
                 {sections.map((section) => (
                   <SortableCard
@@ -273,11 +273,11 @@ export const BuilderPanel: React.FC<Props> = ({
       </div>
 
       {isEmpty && (
-        <div className="mx-5 mt-5 p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg flex items-center gap-3">
-          <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="mx-5 mt-5 p-4 bg-accent/10 border border-accent/20 rounded-lg flex items-center gap-3">
+          <svg className="w-5 h-5 text-accent-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          <p className="text-sm text-blue-400 font-medium">
+          <p className="text-sm text-accent-light font-medium">
             Your README is currently empty. Toggle a section on to start building documentation.
           </p>
         </div>
@@ -287,10 +287,10 @@ export const BuilderPanel: React.FC<Props> = ({
       {selectedSection ? (
         <div className="flex-1 overflow-y-auto">
           {/* Editor header */}
-          <div className="sticky top-0 z-10 px-5 py-3 border-b border-zinc-800 bg-zinc-950
+          <div className="sticky top-0 z-10 px-5 py-3 border-b border-warm-border bg-surface-page
                           flex items-center justify-between">
             <div>
-              <h3 className="text-sm font-semibold text-zinc-100">
+              <h3 className="text-sm font-semibold text-zinc-100 font-display">
                 {SECTION_LABELS[selectedSection.type] ?? selectedSection.type}
               </h3>
               <p className="text-xs text-zinc-500 mt-0.5">
@@ -322,7 +322,7 @@ export const BuilderPanel: React.FC<Props> = ({
         </div>
       ) : (
         <div className="flex-1 flex items-center justify-center">
-          <p className="text-sm text-zinc-600">Select a section above to edit it.</p>
+          <p className="text-sm text-zinc-650">Select a section above to edit it.</p>
         </div>
       )}
     </div>

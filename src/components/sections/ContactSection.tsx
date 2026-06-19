@@ -26,9 +26,9 @@ const Field: React.FC<{
     </label>
     <input
       type={type}
-      className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-sm
-                 text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-blue-600
-                 focus:ring-1 focus:ring-blue-600/40 transition-colors"
+      className="w-full bg-surface-page border border-warm-border rounded-lg px-3 py-2 text-sm
+                 text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-accent
+                 focus:ring-1 focus:ring-accent/40 transition-colors"
       placeholder={placeholder}
       value={value}
       onChange={(e) => onChange(e.target.value)}

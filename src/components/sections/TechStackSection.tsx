@@ -53,25 +53,25 @@ export const TechStackSection: React.FC<Props> = ({ section, onChange }) => {
           <div key={index} className="grid grid-cols-[1fr_1fr_auto_auto] gap-2 items-center">
             <input
               type="text"
-              className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-sm
-                         text-zinc-200 placeholder-zinc-650 focus:outline-none focus:border-blue-600
-                         focus:ring-1 focus:ring-blue-600/40 transition-colors"
+              className="w-full bg-surface-page border border-warm-border rounded-lg px-3 py-2 text-sm
+                         text-zinc-200 placeholder-zinc-650 focus:outline-none focus:border-accent
+                         focus:ring-1 focus:ring-accent/40 transition-colors"
               placeholder="React.js"
               value={row.technology}
               onChange={(e) => updateRow(index, 'technology', e.target.value)}
             />
             <input
               type="text"
-              className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-sm
-                         text-zinc-200 placeholder-zinc-650 focus:outline-none focus:border-blue-600
-                         focus:ring-1 focus:ring-blue-600/40 transition-colors"
+              className="w-full bg-surface-page border border-warm-border rounded-lg px-3 py-2 text-sm
+                         text-zinc-200 placeholder-zinc-650 focus:outline-none focus:border-accent
+                         focus:ring-1 focus:ring-accent/40 transition-colors"
               placeholder="UI framework"
               value={row.purpose}
               onChange={(e) => updateRow(index, 'purpose', e.target.value)}
             />
             <select
-              className="bg-zinc-950 border border-zinc-800 rounded-lg px-2.5 py-2 text-xs text-zinc-200
-                         focus:outline-none focus:border-blue-600 transition-colors cursor-pointer w-28"
+              className="bg-surface-page border border-warm-border rounded-lg px-2.5 py-2 text-xs text-zinc-200
+                         focus:outline-none focus:border-accent transition-colors cursor-pointer w-28"
               value={row.layer}
               onChange={(e) => updateRow(index, 'layer', e.target.value)}
             >
@@ -97,7 +97,7 @@ export const TechStackSection: React.FC<Props> = ({ section, onChange }) => {
       <button
         type="button"
         onClick={addRow}
-        className="flex items-center gap-1.5 text-xs text-blue-400 hover:text-blue-300
+        className="flex items-center gap-1.5 text-xs text-accent-light hover:text-accent-hover
                    transition-colors font-medium mt-1 cursor-pointer"
       >
         <span className="text-base leading-none">+</span> Add technology row

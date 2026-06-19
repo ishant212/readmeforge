@@ -39,9 +39,9 @@ export const FeaturesSection: React.FC<Props> = ({ section, onChange }) => {
             </span>
             <input
               type="text"
-              className="flex-1 bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-sm
-                         text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-blue-600
-                         focus:ring-1 focus:ring-blue-600/40 transition-colors"
+              className="flex-1 bg-surface-page border border-warm-border rounded-lg px-3 py-2 text-sm
+                         text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-accent
+                         focus:ring-1 focus:ring-accent/40 transition-colors"
               placeholder={`Feature ${index + 1}…`}
               value={item}
               onChange={(e) => updateItem(index, e.target.value)}
@@ -64,7 +64,7 @@ export const FeaturesSection: React.FC<Props> = ({ section, onChange }) => {
       <button
         type="button"
         onClick={addItem}
-        className="flex items-center gap-1.5 text-xs text-blue-400 hover:text-blue-300
+        className="flex items-center gap-1.5 text-xs text-accent-light hover:text-accent-hover
                    transition-colors font-medium mt-1"
       >
         <span className="text-base leading-none">+</span> Add feature

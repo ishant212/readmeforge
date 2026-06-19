@@ -58,17 +58,17 @@ export const PreviewPanel: React.FC<Props> = ({ markdown, isEmpty }) => {
   };
 
   return (
-    <div className="w-full md:w-1/2 h-full flex flex-col bg-zinc-950 overflow-hidden border-t md:border-t-0 border-zinc-800">
+    <div className="w-full md:w-1/2 h-full flex flex-col bg-surface-panel overflow-hidden border-t md:border-t-0 border-warm-border">
       {/* Header */}
-      <div className="shrink-0 px-4 py-3 border-b border-zinc-800 bg-zinc-900/60
+      <div className="shrink-0 px-4 py-3 border-b border-warm-border bg-surface-page/60
                       flex items-center justify-between">
-        <h2 className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Preview</h2>
+        <h2 className="text-xs font-bold text-zinc-400 uppercase tracking-widest font-display">Preview</h2>
         <div className="flex items-center gap-2">
           <button
             type="button"
             onClick={copyToClipboard}
             className="text-xs text-zinc-400 hover:text-zinc-200 px-2 py-1.5 rounded
-                       border border-zinc-800 hover:border-zinc-600 transition-colors flex items-center gap-1.5"
+                       border border-warm-border hover:border-warm-border-light transition-colors flex items-center gap-1.5"
             aria-label="Copy Markdown"
           >
             <svg ref={iconRef} className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -84,7 +84,7 @@ export const PreviewPanel: React.FC<Props> = ({ markdown, isEmpty }) => {
             type="button"
             onClick={handleDownload}
             className="text-xs text-zinc-400 hover:text-zinc-200 px-2 py-1.5 rounded
-                       border border-zinc-800 hover:border-zinc-600 transition-colors flex items-center gap-1.5"
+                       border border-warm-border hover:border-warm-border-light transition-colors flex items-center gap-1.5"
             aria-label="Download README.md"
           >
             <svg ref={downloadIconRef} className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,7 +92,7 @@ export const PreviewPanel: React.FC<Props> = ({ markdown, isEmpty }) => {
             </svg>
             Download
           </button>
-          <div className="flex rounded-md overflow-hidden border border-zinc-800 ml-2">
+          <div className="flex rounded-md overflow-hidden border border-warm-border ml-2">
             {(['preview', 'raw'] as const).map((tab) => (
               <button
                 key={tab}
@@ -100,8 +100,8 @@ export const PreviewPanel: React.FC<Props> = ({ markdown, isEmpty }) => {
                 onClick={() => setActiveTab(tab)}
                 className={`px-3 py-1 text-xs font-medium capitalize transition-colors
                   ${activeTab === tab
-                    ? 'bg-zinc-800 text-zinc-100'
-                    : 'bg-zinc-900 text-zinc-400 hover:text-zinc-200'
+                    ? 'bg-surface-card text-zinc-100'
+                    : 'bg-surface-page text-zinc-400 hover:text-zinc-200'
                   }`}
               >
                 {tab === 'preview' ? 'Visual' : 'Markdown'}
@@ -131,13 +131,13 @@ export const PreviewPanel: React.FC<Props> = ({ markdown, isEmpty }) => {
               transition={{ duration: 0.5 }}
               className="absolute inset-0 flex flex-col items-center justify-center text-center p-6"
             >
-              <div className="w-16 h-16 rounded-full bg-zinc-900 flex items-center justify-center mb-4">
-                <svg className="w-8 h-8 text-zinc-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-16 h-16 rounded-full bg-surface-card border border-warm-border flex items-center justify-center mb-4">
+                <svg className="w-8 h-8 text-zinc-650" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                 </svg>
               </div>
-              <h3 className="text-zinc-200 font-semibold mb-2">Your README is empty</h3>
-              <p className="text-sm text-zinc-500 max-w-sm">
+              <h3 className="text-zinc-200 font-semibold mb-2 font-display">Your README is empty</h3>
+              <p className="text-sm text-zinc-550 max-w-sm">
                 Enable sections in the Builder Panel to begin building your documentation.
               </p>
             </motion.div>
@@ -145,23 +145,23 @@ export const PreviewPanel: React.FC<Props> = ({ markdown, isEmpty }) => {
         ) : activeTab === 'preview' ? (
           <div
             className="max-w-3xl mx-auto text-zinc-300 space-y-4
-                       [&_h1]:text-3xl [&_h1]:font-bold [&_h1]:text-zinc-100 [&_h1]:mb-4 [&_h1]:mt-8 [&_h1]:border-b [&_h1]:border-zinc-800 [&_h1]:pb-2 [&_h1:first-child]:mt-0
-                       [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-zinc-100 [&_h2]:mb-4 [&_h2]:mt-8 [&_h2]:border-b [&_h2]:border-zinc-800 [&_h2]:pb-2 [&_h2:first-child]:mt-0
+                       [&_h1]:text-3xl [&_h1]:font-bold [&_h1]:text-zinc-100 [&_h1]:mb-4 [&_h1]:mt-8 [&_h1]:border-b [&_h1]:border-warm-border [&_h1]:pb-2 [&_h1:first-child]:mt-0
+                       [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-zinc-100 [&_h2]:mb-4 [&_h2]:mt-8 [&_h2]:border-b [&_h2]:border-warm-border [&_h2]:pb-2 [&_h2:first-child]:mt-0
                        [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:text-zinc-200 [&_h3]:mb-2 [&_h3]:mt-6
                        [&_p]:text-zinc-300 [&_p]:leading-7 [&_p]:mb-4
                        [&_ul]:space-y-1 [&_ul]:pl-5 [&_ul]:list-disc [&_ul]:mb-4
                        [&_ol]:space-y-1 [&_ol]:pl-5 [&_ol]:list-decimal [&_ol]:mb-4
                        [&_li]:text-zinc-300 [&_li]:leading-7
-                       [&_a]:text-blue-400 [&_a]:underline [&_a]:underline-offset-2 [&_a]:hover:text-blue-300
-                       [&_code]:bg-zinc-800 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded-md [&_code]:text-[13px] [&_code]:font-mono [&_code]:text-zinc-200
-                       [&_pre]:bg-zinc-900 [&_pre]:border [&_pre]:border-zinc-800 [&_pre]:rounded-lg [&_pre]:p-4 [&_pre]:overflow-x-auto [&_pre]:mb-4
+                       [&_a]:text-accent [&_a]:underline [&_a]:underline-offset-2 [&_a]:hover:text-accent-hover
+                       [&_code]:bg-surface-card [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded-md [&_code]:text-[13px] [&_code]:font-mono [&_code]:text-zinc-200
+                       [&_pre]:bg-surface-page [&_pre]:border [&_pre]:border-warm-border [&_pre]:rounded-lg [&_pre]:p-4 [&_pre]:overflow-x-auto [&_pre]:mb-4
                        [&_pre_code]:bg-transparent [&_pre_code]:p-0 [&_pre_code]:text-zinc-300
-                       [&_blockquote]:border-l-4 [&_blockquote]:border-zinc-600 [&_blockquote]:pl-4 [&_blockquote]:text-zinc-400 [&_blockquote]:italic [&_blockquote]:mb-4
+                       [&_blockquote]:border-l-4 [&_blockquote]:border-warm-border-light [&_blockquote]:pl-4 [&_blockquote]:text-zinc-400 [&_blockquote]:italic [&_blockquote]:mb-4
                        [&_table]:w-full [&_table]:border-collapse [&_table]:text-sm [&_table]:mb-4
-                       [&_th]:border [&_th]:border-zinc-700 [&_th]:bg-zinc-800/50 [&_th]:px-3 [&_th]:py-2 [&_th]:text-left [&_th]:font-semibold [&_th]:text-zinc-200
-                       [&_td]:border [&_td]:border-zinc-800 [&_td]:px-3 [&_td]:py-2 [&_td]:text-zinc-300
-                       [&_hr]:border-t [&_hr]:border-zinc-800 [&_hr]:my-8
-                       [&_img]:rounded-lg [&_img]:max-w-full [&_img]:border [&_img]:border-zinc-800"
+                       [&_th]:border [&_th]:border-warm-border-light [&_th]:bg-surface-card/50 [&_th]:px-3 [&_th]:py-2 [&_th]:text-left [&_th]:font-semibold [&_th]:text-zinc-200
+                       [&_td]:border [&_td]:border-warm-border [&_td]:px-3 [&_td]:py-2 [&_td]:text-zinc-300
+                       [&_hr]:border-t [&_hr]:border-warm-border [&_hr]:my-8
+                       [&_img]:rounded-lg [&_img]:max-w-full [&_img]:border [&_img]:border-warm-border"
           >
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdown}</ReactMarkdown>
           </div>

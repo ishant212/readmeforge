@@ -88,8 +88,8 @@ export const BadgesSection: React.FC<Props> = ({ section, onChange }) => {
                 onClick={() => togglePreset(label)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-all duration-150 cursor-pointer
                   ${isSelected
-                    ? 'bg-blue-600/20 border-blue-500 text-blue-300'
-                    : 'bg-zinc-950 border-zinc-800 text-zinc-400 hover:border-zinc-700 hover:text-zinc-300'
+                    ? 'bg-accent/20 border-accent text-accent-light'
+                    : 'bg-surface-page border-warm-border text-zinc-400 hover:border-warm-border-light hover:text-zinc-300'
                   }`}
               >
                 {label}
@@ -115,7 +115,7 @@ export const BadgesSection: React.FC<Props> = ({ section, onChange }) => {
                     key={key}
                     type="button"
                     onClick={() => onChange({ ...section.content, selected: selected.filter((s) => s !== key) })}
-                    className="px-3 py-1.5 rounded-lg text-xs font-medium border bg-emerald-900/20 border-emerald-700 text-emerald-400 hover:bg-red-900/20 hover:border-red-700 hover:text-red-400 transition-all duration-150 cursor-pointer"
+                    className="px-3 py-1.5 rounded-lg text-xs font-medium border bg-emerald-900/20 border-emerald-750 text-emerald-400 hover:bg-red-900/20 hover:border-red-750 hover:text-red-400 transition-all duration-150 cursor-pointer"
                     title="Click to remove"
                   >
                     {label} ×
@@ -131,20 +131,20 @@ export const BadgesSection: React.FC<Props> = ({ section, onChange }) => {
           <button
             type="button"
             onClick={() => setShowCustom(true)}
-            className="flex items-center gap-1.5 text-xs text-blue-400 hover:text-blue-300 transition-colors font-medium cursor-pointer"
+            className="flex items-center gap-1.5 text-xs text-accent-light hover:text-accent-hover transition-colors font-medium cursor-pointer"
           >
             <span className="text-base leading-none">+</span> Custom Badge
           </button>
         ) : (
-          <div className="border border-zinc-800 rounded-lg p-4 space-y-3 bg-zinc-900/30">
+          <div className="border border-warm-border rounded-lg p-4 space-y-3 bg-surface-card/30">
             <p className="text-xs font-semibold text-zinc-400 uppercase tracking-wider">Add Custom Badge</p>
             <div className="grid grid-cols-2 gap-2">
               <div>
                 <label className="block text-[10px] text-zinc-500 mb-1 uppercase tracking-wider">Label *</label>
                 <input
                   type="text"
-                  className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-200
-                             placeholder-zinc-650 focus:outline-none focus:border-blue-600 transition-colors"
+                  className="w-full bg-surface-page border border-warm-border rounded-lg px-3 py-2 text-sm text-zinc-200
+                             placeholder-zinc-650 focus:outline-none focus:border-accent transition-colors"
                   placeholder="My Library"
                   value={customLabel}
                   onChange={(e) => setCustomLabel(e.target.value)}
@@ -154,8 +154,8 @@ export const BadgesSection: React.FC<Props> = ({ section, onChange }) => {
                 <label className="block text-[10px] text-zinc-500 mb-1 uppercase tracking-wider">Color (hex)</label>
                 <input
                   type="text"
-                  className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-200
-                             placeholder-zinc-650 focus:outline-none focus:border-blue-600 transition-colors font-mono"
+                  className="w-full bg-surface-page border border-warm-border rounded-lg px-3 py-2 text-sm text-zinc-200
+                             placeholder-zinc-650 focus:outline-none focus:border-accent transition-colors font-mono"
                   placeholder="555555"
                   value={customColor}
                   onChange={(e) => setCustomColor(e.target.value)}
@@ -166,8 +166,8 @@ export const BadgesSection: React.FC<Props> = ({ section, onChange }) => {
               <label className="block text-[10px] text-zinc-500 mb-1 uppercase tracking-wider">Logo slug (optional, from simple-icons)</label>
               <input
                 type="text"
-                className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-200
-                           placeholder-zinc-650 focus:outline-none focus:border-blue-600 transition-colors font-mono"
+                className="w-full bg-surface-page border border-warm-border rounded-lg px-3 py-2 text-sm text-zinc-200
+                           placeholder-zinc-650 focus:outline-none focus:border-accent transition-colors font-mono"
                 placeholder="react, docker, etc."
                 value={customLogo}
                 onChange={(e) => setCustomLogo(e.target.value)}
@@ -178,7 +178,7 @@ export const BadgesSection: React.FC<Props> = ({ section, onChange }) => {
                 type="button"
                 onClick={addCustom}
                 disabled={!customLabel.trim()}
-                className="px-4 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium rounded-lg
+                className="px-4 py-1.5 bg-accent hover:bg-accent-hover text-white text-xs font-medium rounded-lg
                            transition-colors disabled:opacity-40 disabled:pointer-events-none cursor-pointer"
               >
                 Add
@@ -186,7 +186,7 @@ export const BadgesSection: React.FC<Props> = ({ section, onChange }) => {
               <button
                 type="button"
                 onClick={() => { setShowCustom(false); setCustomLabel(''); setCustomColor('555555'); setCustomLogo(''); }}
-                className="px-4 py-1.5 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 text-xs font-medium rounded-lg transition-colors cursor-pointer"
+                className="px-4 py-1.5 bg-surface-card hover:bg-warm-border-light text-zinc-300 text-xs font-medium rounded-lg border border-warm-border transition-colors cursor-pointer"
               >
                 Cancel
               </button>

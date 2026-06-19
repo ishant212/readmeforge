@@ -16,8 +16,8 @@ export const LicenseSection: React.FC<Props> = ({ section, onChange }) => {
           Select License
         </label>
         <select
-          className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-sm text-zinc-200
-                     focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600/40
+          className="w-full bg-surface-page border border-warm-border rounded-lg p-2.5 text-sm text-zinc-200
+                     focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/40
                      transition-colors cursor-pointer"
           value={license}
           onChange={(e) => onChange({ ...section.content, license: e.target.value })}
