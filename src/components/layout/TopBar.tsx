@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { animate } from 'animejs';
-import logo from '../assets/logo.png'; // adjust path as needed
+import logo from '../../assets/logo.svg';
 
 export const TopBar: React.FC = () => {
   const glowRef = useRef<HTMLDivElement>(null);
