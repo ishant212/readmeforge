@@ -26,9 +26,13 @@ export const TopBar: React.FC = () => {
         className="absolute left-10 top-1/2 w-64 h-32 bg-blue-400 rounded-full blur-3xl opacity-10 pointer-events-none mix-blend-screen -translate-y-1/2"
       />
       <div className="flex items-center space-x-3 relative z-10">
-        <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-700 flex items-center justify-center font-bold text-zinc-100 shadow-sm">
-          R
-        </div>
+        <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-700 flex items-center justify-center shadow-sm overflow-hidden">
+  <img
+    src='src\assets\logo.svg'
+    alt="Logo"
+    className="w-full h-full object-contain"
+  />
+</div>
         <div>
           <h1 className="text-lg font-bold text-zinc-50 tracking-tight leading-none">ReadMeForge</h1>
           <p className="text-zinc-400 text-xs mt-1">Interactive README Generator</p>
