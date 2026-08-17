@@ -152,7 +152,3 @@ readmeforge/
 
 **Ishant Shekhar Eeshu**
 [GitHub](https://github.com/ishant212) · ishant212@example.com
-
----
-
-> Built for Digital Heroes · [digitalheroesco.com](https://digitalheroesco.com)
